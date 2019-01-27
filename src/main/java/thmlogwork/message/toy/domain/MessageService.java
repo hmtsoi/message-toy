@@ -1,4 +1,4 @@
-package thmlogwork.message.toy.rest.domain;
+package thmlogwork.message.toy.domain;
 
 import java.util.List;
 

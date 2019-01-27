@@ -1,6 +1,6 @@
 package thmlogwork.message.toy.rest.v1.messages;
 
-import thmlogwork.message.toy.rest.domain.Message;
+import thmlogwork.message.toy.domain.Message;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;

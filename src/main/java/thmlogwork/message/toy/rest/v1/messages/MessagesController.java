@@ -7,9 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import thmlogwork.message.toy.domain.Message;
+import thmlogwork.message.toy.domain.MessageService;
 import thmlogwork.message.toy.rest.ApiPaths;
-import thmlogwork.message.toy.rest.domain.Message;
-import thmlogwork.message.toy.rest.domain.MessageService;
 
 import java.util.List;
 

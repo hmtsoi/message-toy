@@ -1,6 +1,6 @@
-package thmlogwork.message.toy.rest.persistence;
+package thmlogwork.message.toy.persistence;
 
-import thmlogwork.message.toy.rest.domain.Message;
+import thmlogwork.message.toy.domain.Message;
 
 import java.util.List;
 

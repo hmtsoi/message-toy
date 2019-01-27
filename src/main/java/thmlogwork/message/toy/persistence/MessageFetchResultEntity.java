@@ -1,4 +1,4 @@
-package thmlogwork.message.toy.rest.persistence;
+package thmlogwork.message.toy.persistence;
 
 import java.time.Instant;
 

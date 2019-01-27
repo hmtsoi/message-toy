@@ -1,4 +1,4 @@
-package thmlogwork.message.toy.rest.persistence;
+package thmlogwork.message.toy.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

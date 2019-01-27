@@ -1,8 +1,8 @@
-package thmlogwork.message.toy.rest.domain;
+package thmlogwork.message.toy.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thmlogwork.message.toy.rest.persistence.MessageRepository;
+import thmlogwork.message.toy.persistence.MessageRepository;
 
 import java.util.List;
 import java.util.Objects;
