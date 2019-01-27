@@ -2,7 +2,7 @@ package thmlogwork.message.toy.rest.persistence;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table( name = "messages" )
@@ -16,11 +16,14 @@ class MessageEntity implements Serializable {
 
     @Column( name = "sender_id" )
     private Integer senderId;
+    @Column( name = "sender_name" )
+    private String senderName;
+
     @Column( name = "receiver_id" )
     private Integer receiverId;
 
     @Column( name = "created_timestamp" )
-    private Instant createdTimestamp;
+    private Date createdTimestamp;
 
     public MessageEntity() {
     }
@@ -49,6 +52,14 @@ class MessageEntity implements Serializable {
         this.senderId = senderId;
     }
 
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName( String senderName ) {
+        this.senderName = senderName;
+    }
+
     public Integer getReceiverId() {
         return receiverId;
     }
@@ -57,11 +68,11 @@ class MessageEntity implements Serializable {
         this.receiverId = receiverId;
     }
 
-    public Instant getCreatedTimestamp() {
+    public Date getCreatedTimestamp() {
         return createdTimestamp;
     }
 
-    public void setCreatedTimestamp( Instant createdTimestamp ) {
+    public void setCreatedTimestamp( Date createdTimestamp ) {
         this.createdTimestamp = createdTimestamp;
     }
 }

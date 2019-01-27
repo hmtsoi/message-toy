@@ -4,12 +4,18 @@ import thmlogwork.message.toy.rest.domain.Message;
 
 import java.util.List;
 
-public class MessagesResponseFactory {
+import static java.util.stream.Collectors.toList;
+
+class MessagesResponseFactory {
 
     private MessagesResponseFactory() {
     }
 
-    public static MessagesResponse map( List<Message> messageList ) {
-        return new MessagesResponse();
+    static MessagesResponse map( List<Message> messageList ) {
+
+        final List<String> messages = messageList.stream()
+                .map( m -> m.getMessage() )
+                .collect( toList() );
+        return new MessagesResponse( messages );
     }
 }

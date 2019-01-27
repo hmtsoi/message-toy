@@ -1,11 +1,11 @@
 package thmlogwork.message.toy.rest.domain;
 
-import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import thmlogwork.message.toy.rest.persistence.MessageRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 class MessageServiceImpl implements MessageService {
@@ -14,6 +14,7 @@ class MessageServiceImpl implements MessageService {
     private MessageRepository messageRepository;
 
     @Override public List<Message> getMessagesForUser( Integer userId ) {
-        throw new NotImplementedException( "" );
+        Objects.requireNonNull( userId );
+        return messageRepository.getMessagesForUser( userId );
     }
 }

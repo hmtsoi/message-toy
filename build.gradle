@@ -39,6 +39,7 @@ dependencies {
 
     // lombok
     compile 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
 
     // testing
     testCompile 'io.rest-assured:spring-mock-mvc:3.0.5'

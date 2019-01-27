@@ -17,4 +17,5 @@ public class Message {
     private Integer receiverName;
 
     private Instant messageTimestamp;
+
 }

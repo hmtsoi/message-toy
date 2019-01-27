@@ -30,6 +30,6 @@ public class MessagesController {
 
     private Integer getUserId() {
         // TODO get user id by the authorization token in the request
-        return 10;
+        return 1;
     }
 }
