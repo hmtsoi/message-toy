@@ -7,7 +7,8 @@ html
         link(rel="stylesheet", href="/css/styles.css")
     body
         div(class="center")
-            div(id="messageListWrapper")
-        p
-            h2= pageName
-            div Test
+            div(id="message-list-wrapper")
+        div(class="bottom",style="background-color:#909090")
+            div(id="send")
+                input(id="sendInput",type="text",style="width:30em;margin:30px;padding:10px;background-color:#FFFFFF")
+                button(style="text-align:right;margin-right:25px;background-color:#909090;font-size:1em") Send

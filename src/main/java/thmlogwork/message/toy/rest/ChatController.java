@@ -12,7 +12,7 @@ public class ChatController {
     @GetMapping
     public ModelAndView getChat() {
         final ModelAndView output = new ModelAndView( "chat" );
-        output.addObject( "pageName", "new" );
+        output.addObject( "title", "chat-toy" );
         return output;
     }
 
