@@ -1,6 +1,7 @@
 $(document).ready(function() {
+  var msgUrl = "/v1/messages";
   $.ajax({
-    url: "/v1/messages",
+    url: msgUrl,
     success: function( result ) {
       result.messages.forEach(function(m) {
         $( "#message-list-wrapper" ).append( "<h4><font color=\"#D0D0D0\">" + m.senderName + "</font></h4>" );
@@ -12,6 +13,18 @@ $(document).ready(function() {
 
   $("#sendBtn").on("click", function() {
     var input = $( "#sendInput" ).val();
-    console.log(input);
+    $.ajax({
+      type: "POST",
+      url: msgUrl,
+      dataType: 'json',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      data: JSON.stringify({ message: input}),
+      success: function() {
+        href: href
+      },
+    });
   })
 })
