@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import thmlogwork.message.toy.domain.Message;
 
+import java.sql.Date;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -26,5 +27,18 @@ class MessageRepositoryImpl implements MessageRepository {
                                         e.getCreatedTimestamp().toInstant() )
                 )
                 .collect( toList() );
+    }
+
+    @Override
+    public Long saveMessage( Message message, Integer userId ) {
+        final MessageEntity entity = new MessageEntity();
+        entity.setMessage( message.getMessage() );
+        entity.setSenderId( userId );
+        entity.setSenderName( message.getSenderName() );
+        entity.setReceiverId( userId );
+        entity.setCreatedTimestamp( Date.from( message.getMessageTimestamp() ) );
+
+        final MessageEntity savedEntity = messageJpaRepository.saveAndFlush( entity );
+        return savedEntity.getId();
     }
 }

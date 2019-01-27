@@ -17,4 +17,10 @@ class MessageServiceImpl implements MessageService {
         Objects.requireNonNull( userId );
         return messageRepository.getMessagesForUser( userId );
     }
+
+    @Override public Long saveMessage( Message message, Integer userId ) {
+        Objects.requireNonNull( message );
+        Objects.requireNonNull( userId );
+        return messageRepository.saveMessage( message, userId );
+    }
 }

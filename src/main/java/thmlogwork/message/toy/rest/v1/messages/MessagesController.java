@@ -11,6 +11,7 @@ import thmlogwork.message.toy.domain.MessageService;
 import thmlogwork.message.toy.rest.ApiPaths;
 
 import java.net.URI;
+import java.time.Instant;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,14 @@ public class MessagesController {
 
     @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity postMessage( @RequestBody MessageRequest request ) {
-        System.out.println( request.getMessage() );
-
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
+        final Message message = new Message( request.getMessage(),
+                                             getUserId(),
+                                             "test sender 001",
+                                             getUserId(),
+                                             null,
+                                             Instant.now() );
+        final Long id = messageService.saveMessage( message, getUserId() );
+        final URI uri = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
         return ResponseEntity.created( uri ).build();
     }
 

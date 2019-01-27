@@ -7,6 +7,7 @@ $(document).ready(function() {
         $( "#message-list-wrapper" ).append( "<h4><font color=\"#D0D0D0\">" + m.senderName + "</font></h4>" );
         $( "#message-list-wrapper" ).append( "<h4>" + m.message + "</h5>" );
         $( "#message-list-wrapper" ).append( "<h4><font color=\"#D0D0D0\">" + m.messageTimestamp + "</font></h4>" );
+        $( "#message-list-wrapper" ).append( "<h4> </h4>" );
       })
     }
   });
@@ -21,10 +22,8 @@ $(document).ready(function() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      data: JSON.stringify({ message: input}),
-      success: function() {
-        href: href
-      },
+      data: JSON.stringify({ message: input})
     });
+    window.location.reload();
   })
 })

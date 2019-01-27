@@ -6,10 +6,11 @@ import java.util.Date;
 
 @Entity
 @Table( name = "messages" )
+@SequenceGenerator(name = "messages_id_seq", sequenceName = "messages_id_seq", allocationSize = 1)
 class MessageEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "messages_id_seq")
     private Long id;
 
     private String message;
